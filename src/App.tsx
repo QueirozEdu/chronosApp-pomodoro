@@ -21,11 +21,15 @@ export function App() {
       <Container>
         <CountDown />
       </Container>
-
       <Container>
         <form className='form' action=''>
           <div className='formRow'>
-            <DefaultInput id='myInput' type='input' labelText='anything' />
+            <DefaultInput
+              labelText='anything'
+              id='myInput'
+              type='input'
+              placeholder='Type something'
+            />
           </div>
 
           <div className='formRow'>
