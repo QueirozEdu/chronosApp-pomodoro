@@ -22,10 +22,10 @@
   background: var(--warning);
 }
 
-.shortBrakeTime {
+.shortBreakTime {
   background: var(--primary);
 }
 
-.longBrakeTime {
+.longBreakTime {
   background: var(--info);
 }
