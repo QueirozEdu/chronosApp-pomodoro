@@ -10,6 +10,7 @@ import { getNextCycleType } from '../../utils/getNextCycleType';
 import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
 import { Tips } from '../Tips';
 import { TimerWorkerManager } from '../../workers/TimerWorkerManager';
+import { showMessage } from '../../adapters/showMessage';
 
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
@@ -27,7 +28,8 @@ export function MainForm() {
     const taskName = taskNameInput.current.value.trim();
 
     if (!taskName) {
-      alert('Digite o nome da tarefa');
+      showMessage.dismiss();
+      showMessage.warn('Enter a task name');
       return;
     }
 
@@ -42,6 +44,7 @@ export function MainForm() {
     };
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
+    showMessage.sucess('Task started!');
 
     const worker = TimerWorkerManager.getInstance();
 
@@ -51,6 +54,8 @@ export function MainForm() {
   }
 
   function handleInterruptTask() {
+    showMessage.dismiss();
+    showMessage.info('Task stoped');
     dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
   }
 
