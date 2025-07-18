@@ -11,12 +11,12 @@ export function Tips() {
   const tipsForWhenActiveTask = {
     workTime: (
       <span>
-        Focus for: <b>{state.config.workTime}min</b>
+        Focus for: <b>{state.config.workTime} min</b>
       </span>
     ),
     shortBreakTime: (
       <span>
-        Rest for: <b>{state.config.shortBreakTime}min</b>
+        Rest for: <b>{state.config.shortBreakTime} min</b>
       </span>
     ),
     longBreakTime: (
@@ -29,12 +29,12 @@ export function Tips() {
   const tipsForNoActiveTask = {
     workTime: (
       <span>
-        Next cycle: <b>{state.config.workTime}min</b>
+        Next cycle: <b>{state.config.workTime} min</b>
       </span>
     ),
     shortBreakTime: (
       <span>
-        Next rest: <b>{state.config.shortBreakTime}min</b>
+        Next rest: <b>{state.config.shortBreakTime} min</b>
       </span>
     ),
     longBreakTime: (
