@@ -1,6 +1,7 @@
 import { Container } from '../../components/Container';
 import { GenericHtml } from '../../components/GenericHtml';
 import { Heading } from '../../components/Heading';
+import { RouterLink } from '../../components/RouterLink';
 import { MainTemplate } from '../../components/templates/MainTemplate';
 
 export function NotFound() {
@@ -16,10 +17,10 @@ export function NotFound() {
           </p>
           <p>
             "But don’t worry, you’re not lost in space (yet). You can safely
-            return to the <a href='/'>main page</a> or to your{' '}
-            <a href='/history'>history</a> — or you can stay here and pretend
-            you’ve found a secret page that only the coolest explorers can
-            access.🧭✨
+            return to the <RouterLink href='/'>main page</RouterLink> or to your{' '}
+            <RouterLink href='/history/'>history</RouterLink> — or you can stay
+            here and pretend you’ve found a secret page that only the coolest
+            explorers can access.🧭✨
           </p>
           <p>
             If you believe this page should exist (or if you just want to chat
