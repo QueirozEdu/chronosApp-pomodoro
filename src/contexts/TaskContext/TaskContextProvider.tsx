@@ -40,11 +40,10 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
     if (!state.activeTask) {
       worker.terminate();
     }
-    if (state.formattedSecondsRemaining != '00:00') {
-      document.title = `${state.formattedSecondsRemaining} - Chronos Pomodoro`;
-    } else {
-      document.title = 'Chronos Pomodoro';
-    }
+    document.title =
+      state.formattedSecondsRemaining === '00:00'
+        ? 'Chronos Pomodoro'
+        : `${state.formattedSecondsRemaining} - Chronos Pomodoro`;
 
     worker.postMessage(state);
   }, [worker, state]);
