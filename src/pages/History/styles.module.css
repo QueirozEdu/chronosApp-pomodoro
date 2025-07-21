@@ -43,3 +43,7 @@
 .thSort:hover {
   filter: brightness(80%);
 }
+.emptyTasksText {
+  text-align: center;
+  font-weight: bold;
+}
