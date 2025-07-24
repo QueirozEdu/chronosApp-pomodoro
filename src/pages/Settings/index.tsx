@@ -43,7 +43,7 @@ export function Settings() {
               labelText='Focus'
               ref={workTimeInput}
               defaultValue={state.config.workTime}
-            ></DefaultInput>
+            />
           </div>
           <div className='formRow'>
             <DefaultInput
@@ -51,7 +51,7 @@ export function Settings() {
               labelText='Short Break Time'
               ref={shortBreakTimeInput}
               defaultValue={state.config.shortBreakTime}
-            ></DefaultInput>
+            />
           </div>
           <div className='formRow'>
             <DefaultInput
@@ -59,7 +59,7 @@ export function Settings() {
               labelText='Long Break Time'
               ref={longBreakTimeInput}
               defaultValue={state.config.longBreakTime}
-            ></DefaultInput>
+            />
           </div>
           <div className='formRow'>
             <DefaultButton
