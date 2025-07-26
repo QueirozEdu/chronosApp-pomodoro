@@ -15,6 +15,7 @@ import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
 export function History() {
   const { state, dispatch } = useTaskContext();
   const [confirmClearHistory, setConfirmClearHistory] = useState(false);
+
   const hasTasks = state.tasks.length > 0;
 
   const [sortTasksOptions, setSortTasksOptions] = useState<SortTasksOptions>(
@@ -37,6 +38,10 @@ export function History() {
       }),
     }));
   }, [state.tasks]);
+
+  useEffect(() => {
+    document.title = 'History - Chronos';
+  }, []);
 
   useEffect(() => {
     if (!confirmClearHistory) return;

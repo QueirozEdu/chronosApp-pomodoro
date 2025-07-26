@@ -5,12 +5,16 @@ import { Heading } from '../../components/Heading';
 import { MainTemplate } from '../../components/templates/MainTemplate';
 import styles from '../Settings/styles.module.css';
 import { DefaultButton } from '../../components/DefaultButton';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { showMessage } from '../../adapters/showMessage';
 import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
 
 export function Settings() {
+  useEffect(() => {
+    document.title = 'Settings - Chronos';
+  }, []);
+
   const { state, dispatch } = useTaskContext();
   const workTimeInput = useRef<HTMLInputElement>(null);
   const shortBreakTimeInput = useRef<HTMLInputElement>(null);
