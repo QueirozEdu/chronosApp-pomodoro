@@ -1,3 +1,13 @@
 .settingsTipText {
   text-align: center;
 }
+.resetSettingsButton button {
+  min-width: auto;
+  margin: 0;
+  padding: 1rem;
+}
+
+.resetSettingsButton button svg {
+  width: 2rem;
+  height: 2rem;
+}

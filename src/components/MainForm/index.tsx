@@ -45,7 +45,7 @@ export function MainForm() {
     };
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
-    showMessage.sucess('Task started!');
+    showMessage.success('Task started!');
 
     const worker = TimerWorkerManager.getInstance();
 
