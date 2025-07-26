@@ -7,6 +7,7 @@ import styles from '../Settings/styles.module.css';
 import { DefaultButton } from '../../components/DefaultButton';
 import { useRef } from 'react';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
+import { showMessage } from '../../adapters/showMessage';
 
 export function Settings() {
   const { state } = useTaskContext();
@@ -17,11 +18,13 @@ export function Settings() {
   function handleSaveSettings(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const workTime = workTimeInput.current?.value;
-    const shortBreakTime = shortBreakTimeInput.current?.value;
-    const longBreakTime = longBreakTimeInput.current?.value;
+    const workTime = Number(workTimeInput.current?.value);
+    const shortBreakTime = Number(shortBreakTimeInput.current?.value);
+    const longBreakTime = Number(longBreakTimeInput.current?.value);
 
-    console.log(workTime, shortBreakTime, longBreakTime);
+    if (isNaN(workTime) || isNaN(shortBreakTime) || isNaN(longBreakTime)) {
+      showMessage.error('Please enter numbers only.');
+    }
   }
 
   return (
