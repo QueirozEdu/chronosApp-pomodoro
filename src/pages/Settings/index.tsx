@@ -23,6 +23,7 @@ export function Settings() {
     const longBreakTime = Number(longBreakTimeInput.current?.value);
 
     if (isNaN(workTime) || isNaN(shortBreakTime) || isNaN(longBreakTime)) {
+      showMessage.dismiss();
       showMessage.error('Please enter numbers only.');
     }
   }
